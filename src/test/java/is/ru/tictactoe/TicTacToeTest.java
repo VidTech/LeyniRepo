@@ -33,5 +33,13 @@ public class TicTacToeTest {
 		assertEquals('X', test.b.getSymbolAtPos(1,1));
 	}
 
+	@Test
+	public void testCheckForWinner(){
+		Game test = new Game();
+		test.b.addToBoard(test.p1, 0, 0);
+		test.b.addToBoard(test.p1, 1, 0);
+		test.b.addToBoard(test.p1, 2, 0);
+		assertEquals(true, test.checkIfWinner());
+	}
 
 }
