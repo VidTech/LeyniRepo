@@ -69,5 +69,15 @@ public class Game{
 		return true;
 	}
 
+    public static void main(String[] args) {
+        //b.displayBoard();
+
+        //create instance of Board
+        Board board = new Board();
+        
+        //printing the board
+        board.displayBoard();
+    }
+
 }
 
