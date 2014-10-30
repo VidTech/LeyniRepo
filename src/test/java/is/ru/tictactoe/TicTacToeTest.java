@@ -9,17 +9,6 @@ public class TicTacToeTest {
 
 	//final TicTacToe test = new TicTacToe();
 
-	public static void printArray(double theBoard[][]) {
-    	for (int row = 0; row < theBoard.length; row++) {
-        	for (int column = 0; column < theBoard[row].length; column++) {
-            	System.out.print(theBoard[row][column] + " ");
-        	}
-        	System.out.println();
-    	}
-	}
-
-	printArray(theBoard[][]);
-
 	@Test
 	public void testBoardInitialize(){
 
@@ -29,8 +18,5 @@ public class TicTacToeTest {
 		assertEquals(3, test.theBoard[1].length);
 		assertEquals(3, test.theBoard[2].length);
 	}
-
-
-
 
 }
