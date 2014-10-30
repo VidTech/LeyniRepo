@@ -4,10 +4,12 @@ public class Game{
 	Board b = new Board();
 	Player p1 = new Player('X');
 	Player p2 = new Player('O');
+	Player current = p1;
 
 
-	public void makeMove(Player p, int row, int col){
-		this.b.addToBoard(p, row, col);
+	public void makeMove(int row, int col){
+		this.b.addToBoard(current, row, col);
+        switchPlayers();
 	}
 
 	public boolean checkIfWinner(){
@@ -67,6 +69,15 @@ public class Game{
 			}
 		}
 		return true;
+	}
+
+	public void switchPlayers(){
+		if (current == p1) {
+			current = p2;
+		}
+		else {
+			current = p1;
+		}
 	}
 
 }
