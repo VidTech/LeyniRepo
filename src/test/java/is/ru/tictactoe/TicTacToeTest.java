@@ -23,7 +23,14 @@ public class TicTacToeTest {
 	@Test
 	public void testPlayerCharacter(){
 		Game test = new Game();
-		assertEquals('w', test.p1.getSymbol());
+		assertEquals('X', test.p1.getSymbol());
+	}
+
+	@Test
+	public void testAddToBoard(){
+		Game test = new Game();
+		test.b.addToBoard(test.p1, 1, 1);
+		assertEquals('X', test.b.getSymbolAtPos(1,1));
 	}
 
 

@@ -7,7 +7,7 @@ public class Player{
 		this.character = c;
 	}
 
-	public char getSymbol( ) {
+	public char getSymbol(){
 		return this.character;
 	}
 
