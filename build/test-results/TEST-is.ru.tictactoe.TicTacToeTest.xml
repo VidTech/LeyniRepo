@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.tictactoe.TicTacToeTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2014-10-30T20:26:07" hostname="i-64ba6706" time="0.011">
+<testsuite name="is.ru.tictactoe.TicTacToeTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2014-10-30T21:03:14" hostname="i-64ba6706" time="0.015">
   <properties/>
   <testcase name="testBoardInitialize" classname="is.ru.tictactoe.TicTacToeTest" time="0.001"/>
-  <testcase name="testPlayerCharacter" classname="is.ru.tictactoe.TicTacToeTest" time="0.001"/>
-  <testcase name="testCheckForTie" classname="is.ru.tictactoe.TicTacToeTest" time="0.0"/>
+  <testcase name="testPlayerCharacter" classname="is.ru.tictactoe.TicTacToeTest" time="0.002"/>
+  <testcase name="testCheckForTie" classname="is.ru.tictactoe.TicTacToeTest" time="0.001"/>
   <testcase name="testAddToBoard" classname="is.ru.tictactoe.TicTacToeTest" time="0.0"/>
   <testcase name="testCheckForWinner" classname="is.ru.tictactoe.TicTacToeTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

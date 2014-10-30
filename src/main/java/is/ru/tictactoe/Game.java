@@ -70,13 +70,20 @@ public class Game{
 	}
 
     public static void main(String[] args) {
-        //b.displayBoard();
-
         //create instance of Board
         Board board = new Board();
         
+        //create players
+        Player p1 = new Player('X');
+        Player p2 = new Player('O');
+
+        //adding players to the board
+        board.addToBoard(p1,1,2);
+        board.addToBoard(p2,2,1);
+
         //printing the board
         board.displayBoard();
+
     }
 
 }
