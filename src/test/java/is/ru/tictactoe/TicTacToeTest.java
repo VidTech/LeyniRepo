@@ -55,6 +55,5 @@ public class TicTacToeTest {
 		assertEquals(true, test.checkIfTie());
 	}
 
-=======
->>>>>>> ec1587bcf0036e01200aa29945734dd1806df783
+
 }
