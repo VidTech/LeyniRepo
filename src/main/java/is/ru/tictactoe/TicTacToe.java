@@ -2,7 +2,7 @@ package is.ru.tictactoe;
 import java.util.Scanner;
 
 import static spark.Spark.*;
-import spark.*
+//import spark.*;
 
 
 public class TicTacToe{
