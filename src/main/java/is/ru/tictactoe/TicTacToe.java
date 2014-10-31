@@ -1,8 +1,8 @@
 package is.ru.tictactoe;
 import java.util.Scanner;
 
-import static spark.Spark.*;
-import spark.*
+//import static spark.Spark.*;
+//import spark.*;
 
 
 public class TicTacToe{
