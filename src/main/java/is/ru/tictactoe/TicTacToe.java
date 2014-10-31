@@ -1,8 +1,8 @@
 package is.ru.tictactoe;
 import java.util.Scanner;
 
-import static spark.Spark.*;
-import spark.*
+//import static spark.Spark.*;
+//import spark.*;
 
 
 public class TicTacToe{
@@ -24,7 +24,7 @@ public class TicTacToe{
 				theGame = new Game();
 			}
 			if(theGame.checkIfTie()){
-				theGame.b = new Game();
+				theGame = new Game();
 			}
 			else{
 				int row = scanner.nextInt();
