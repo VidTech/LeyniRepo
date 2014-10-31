@@ -51,7 +51,7 @@ public class TicTacToeTest {
 	}
 
 	@Test
-		public void testCheckForWinnerInCross(){
+	public void testCheckForWinnerInCross(){
 		Game test = new Game();
 		test.b.addToBoard(test.p1, 0, 0);
 		test.b.addToBoard(test.p1, 1, 1);
@@ -89,5 +89,19 @@ public class TicTacToeTest {
 		test.b.addToBoard(test.p2, 2, 2);
 		test.b.addToBoard(test.p2, 2, 1);
 		assertEquals(true, test.checkIfTie());
+	}
+
+	@Test
+	public void testCurrentPlayer(){
+		Game test = new Game();
+		assertEquals(test.p1, test.current);
+	}
+
+	@Test
+	//test if current player is now p2
+	public void testSwitchPlayer(){
+		Game test = new Game();
+		test.makeMove(1, 1);
+		assertEquals(test.p2, test.current);
 	}
 }
