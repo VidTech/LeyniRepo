@@ -10,12 +10,14 @@ public class TicTacToe{
 	public static void main(String[] args) {
 
 
-		staticFileLocation("/public");
-        setPort(Integer.valueOf(System.getenv("PORT")));
-        final Game tictactoe = new Game();
+		//staticFileLocation("/public");
+        //setPort(Integer.valueOf(System.getenv("PORT")));
+        //final Game tictactoe = new Game();
 
-		//Scanner scanner = new Scanner(System.in);
-		//Game theGame = new Game();
+		Scanner scanner = new Scanner(System.in);
+		Game theGame = new Game();
+
+
 
 		while (true) {
 			if(theGame.checkIfWinner()){
