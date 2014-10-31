@@ -15,11 +15,12 @@ public class Board{
 		}
 	}
 	
-	public void  addToBoard(Player p, int row, int col) {
+	public boolean  addToBoard(Player p, int row, int col) {
 		if(theBoard[row][col] == ' ') {
 			theBoard[row][col] = p.getSymbol( );
+			return true;
 		}
-		else return;
+		else return false;
 	}
 
 	public char getSymbolAtPos(int row, int col) {

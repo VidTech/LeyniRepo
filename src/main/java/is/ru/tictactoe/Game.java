@@ -8,8 +8,9 @@ public class Game{
 
 
 	public void makeMove(int row, int col){
-		this.b.addToBoard(current, row, col);
-        switchPlayers();
+		if(this.b.addToBoard(current, row, col)){
+            switchPlayers();
+        }
 	}
 
 	public boolean checkIfWinner(){
