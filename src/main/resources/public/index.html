@@ -1,21 +1,127 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-	    <title>TicTacToe</title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <title>TicTacToe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-	</head>
-	<body>
-		<h2>BEST TICTACTOE EVER</h2>
-		<applet
-		code = TicTacToe
-		codebase = "/LeyniRepo/src/main/java/is/ru/tictactoe"
-		width = "400"
-		height = "200"
-		name = "TicTacToe">
+    <!-- load bootstrap for nicer ui -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 
-		</applet>
-	</body>
+   <style type="text/css">
+        td
+        {
+          text-align : center; 
+          vertical-align : middle;
+        }
+        h1
+        {
+          text-align: center;
+        }
+        form-inline
+        {
+          padding-left: 500px;
+          padding-top: 50px;
+        }
+        table
+        {
+          padding-left: 450px;
+          width: 300px;
+          height: 300px;
+        }
+        form
+        {
+          padding-left: 450px;
+          padding-top: 30px;
+        }
+        p 
+        {
+          text-align: center;
+          padding-top: 20px;
+        }
+        .btn
+        {
+          width: 100px;
+          height:100px;
+        }
+        input[type="button"]
+        {
+          font-size: 50px;
+        }
+    </style>
+  </head>
+
+  <body>
+  
+  <div class="container">
+    <h1> BEST TicTacToe EVER</h1>
+
+    <form method="post" action="/add" class="form-inline" role="form">
+    <table border="1" width="100">
+      <tr>
+        <td><input type = "button" class="btn" id="0_0" value="-"/></td>
+        <td><input type = "button" class="btn" id="0_1" value="-"/></td>
+        <td><input type = "button" class="btn" id="0_2" value="-"/></td>
+      </tr>
+      <tr>
+        <td><input type = "button" class="btn" id="1_1" value="-"/></td>
+        <td><input type = "button" class="btn" id="1_1" value="-"/></td>
+        <td><input type = "button" class="btn" id="1_2" value="-"/></td>
+      </tr>
+      <tr>
+        <td><input type = "button" class="btn" id="2_0" value="-"/></td>
+        <td><input type = "button" class="btn" id="2_1" value="-"/></td>
+        <td><input type = "button" class="btn" id="2_2" value="-"/></td>
+      </tr>
+    </table>
+  </form>
+    <p>This is the game's table</p>
+    <div id="results"></div>
+  </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <script>
+   $(document).ready(function(){
+    $('.btn').click(function(event){
+        var form = $('form');
+        var x = this;
+        x.disabled = true;
+      $.ajax({
+          type: form.attr('method'),
+          url: form.attr('action'),
+          data: this.id
+          }).done(function(ret) 
+          {
+            if(ret === "X"){
+              $(x).val('X');
+            }
+            if(ret === "O"){
+              $(x).val('O');
+            }
+            /*if(ret === "p1"){
+              $(x).val('1!');
+              $('.btn').attr("disabled", "disabled");
+            }
+            if(ret === "p2"){
+              $(x).val('2!');
+              $('.btn').attr("disabled", "disabled");
+            }
+            if (ret === "Tie1"){
+              $(x).val('Tie');
+              $('.btn').attr("disabled", "disabled");
+            }
+            if (ret === "Tie2"){
+              $(x).val('Tie');
+              $('.btn').attr("disabled", "disabled");
+            }*/
+          }).fail(function() {
+              alert("Error");
+          });
+          event.preventDefault();
+    });
+  });
+  </script>
+  </body>
 </html>
+
