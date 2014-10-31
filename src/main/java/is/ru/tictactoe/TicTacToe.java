@@ -24,7 +24,7 @@ public class TicTacToe{
 				theGame = new Game();
 			}
 			if(theGame.checkIfTie()){
-				theGame.b = new Game();
+				theGame = new Game();
 			}
 			else{
 				int row = scanner.nextInt();
