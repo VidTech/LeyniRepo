@@ -11,7 +11,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = "is.ru.tictactoe.Game"
+mainClassName = "is.ru.tictactoe.TicTacToe"
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -34,7 +34,7 @@ dependencies {
 
 jar {
 	manifest {
-		attributes("Main-Class": "is.ru.tictactoe.Game")
+		attributes("Main-Class": "is.ru.tictactoe.TicTacToe")
 	}
 }
 task stage { dependsOn installApp }
