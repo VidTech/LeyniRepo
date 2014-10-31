@@ -42,18 +42,21 @@ public class TicTacToeTest {
 	}
 
 	@Test
+	public void testCheckForWinnerInRow(){
+		Game test = new Game();
+		test.b.addToBoard(test.p1, 0, 0);
+		test.b.addToBoard(test.p1, 0, 1);
+		test.b.addToBoard(test.p1, 0, 2);
+		assertEquals(true, test.checkIfWinner());
+	}
+
+	@Test
 		public void testCheckForWinnerInCross(){
 		Game test = new Game();
 		test.b.addToBoard(test.p1, 0, 0);
 		test.b.addToBoard(test.p1, 1, 1);
 		test.b.addToBoard(test.p1, 2, 2);
 		assertEquals(true, test.checkIfWinner());
-	}
-
-	@Test
-	public void testIfWinningCross(){
-
-
 	}
 
 	@Test
