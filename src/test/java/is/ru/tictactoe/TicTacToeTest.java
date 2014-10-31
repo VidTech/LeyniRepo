@@ -33,6 +33,13 @@ public class TicTacToeTest {
 	}
 
 	@Test
+	//test if move is outside the board
+	public void testMakeMove(){
+		Game test = new Game();
+		assertEquals("some error", test.makeMove(4,4));
+	}
+
+	@Test
 	public void testCheckForWinnerInCol(){
 		Game test = new Game();
 		test.b.addToBoard(test.p1, 0, 0);
@@ -92,6 +99,7 @@ public class TicTacToeTest {
 	}
 
 	@Test
+	//test if current player is p1 in the beginning
 	public void testCurrentPlayer(){
 		Game test = new Game();
 		assertEquals(test.p1, test.current);
@@ -104,4 +112,6 @@ public class TicTacToeTest {
 		test.makeMove(1, 1);
 		assertEquals(test.p2, test.current);
 	}
+
+
 }
