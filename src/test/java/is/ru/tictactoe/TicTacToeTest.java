@@ -60,6 +60,7 @@ public class TicTacToeTest {
 	}
 
 	@Test
+	//testing when there is a winner
 	public void testCheckForTie(){
 		Game test = new Game();
 		test.b.addToBoard(test.p1, 0, 0);
@@ -71,8 +72,22 @@ public class TicTacToeTest {
 		test.b.addToBoard(test.p1, 2, 0);
 		test.b.addToBoard(test.p2, 2, 2);
 		test.b.addToBoard(test.p1, 2, 1);
-		assertEquals(true, test.checkIfTie());
+		assertEquals(false, test.checkIfTie());
 	}
 
-
+	@Test
+	//testing when it is a tie
+	public void testCheckForTie2(){
+		Game test = new Game();
+		test.b.addToBoard(test.p1, 0, 0);
+		test.b.addToBoard(test.p1, 0, 1);
+		test.b.addToBoard(test.p2, 0, 2);
+		test.b.addToBoard(test.p2, 1, 0);
+		test.b.addToBoard(test.p1, 1, 1);
+		test.b.addToBoard(test.p1, 1, 2);
+		test.b.addToBoard(test.p1, 2, 0);
+		test.b.addToBoard(test.p2, 2, 2);
+		test.b.addToBoard(test.p2, 2, 1);
+		assertEquals(true, test.checkIfTie());
+	}
 }

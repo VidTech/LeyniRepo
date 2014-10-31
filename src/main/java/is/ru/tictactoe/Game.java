@@ -62,14 +62,10 @@ public class Game{
     }
 
 	public boolean checkIfTie(){
-		for(int i = 0; i < 3; i++){
-			for(int j = 0; j < 3; j++){
-				if(b.getSymbolAtPos(i,j) == ' '){
-					return false;
-				}
-			}
-		}
-		return true;
+        if(checkIfWinner() == false){
+            return true;
+        }
+        return false;
 	}
 
 	public void switchPlayers(){
