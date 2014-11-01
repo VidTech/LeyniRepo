@@ -52,7 +52,7 @@ public class TicTacToe{
 				else{
 					String sym = Character.toString(tictactoe.current.getSymbol());
 					tictactoe.makeMove(row, col);
-					return "X";
+					return sym;
 					
 				}
 
