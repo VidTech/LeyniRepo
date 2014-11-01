@@ -38,7 +38,7 @@ public class TicTacToe{
 				}
 				else{
 					tictactoe.makeMove(row, col);
-					return 'X';
+					return "X";
 					
 				}
 
