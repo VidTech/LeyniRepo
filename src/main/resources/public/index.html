@@ -59,19 +59,19 @@
     <form method="post" action="/add" class="form-inline" role="form">
     <table border="1" width="100">
       <tr>
-        <td><input type = "button" class="btn" id="0_0" value=" "/></td>
-        <td><input type = "button" class="btn" id="0_1" value=" "/></td>
-        <td><input type = "button" class="btn" id="0_2" value=" "/></td>
+        <td><input type = "button" class="btn" id="0" value=" "/></td>
+        <td><input type = "button" class="btn" id="1" value=" "/></td>
+        <td><input type = "button" class="btn" id="2" value=" "/></td>
       </tr>
       <tr>
-        <td><input type = "button" class="btn" id="1_1" value=" "/></td>
-        <td><input type = "button" class="btn" id="1_1" value=" "/></td>
-        <td><input type = "button" class="btn" id="1_2" value=" "/></td>
+        <td><input type = "button" class="btn" id="3" value=" "/></td>
+        <td><input type = "button" class="btn" id="4" value=" "/></td>
+        <td><input type = "button" class="btn" id="5" value=" "/></td>
       </tr>
       <tr>
-        <td><input type = "button" class="btn" id="2_0" value=" "/></td>
-        <td><input type = "button" class="btn" id="2_1" value=" "/></td>
-        <td><input type = "button" class="btn" id="2_2" value=" "/></td>
+        <td><input type = "button" class="btn" id="6" value=" "/></td>
+        <td><input type = "button" class="btn" id="7" value=" "/></td>
+        <td><input type = "button" class="btn" id="8" value=" "/></td>
       </tr>
     </table>
   </form>
@@ -91,7 +91,8 @@
       $.ajax({
           type: form.attr('method'),
           url: form.attr('action'),
-          data: 'boardPos=' + this.id
+          data: 'pos=' + this.id
+          console.log(data)
           }).done(function(ret) 
           {
           	console.log(ret);
