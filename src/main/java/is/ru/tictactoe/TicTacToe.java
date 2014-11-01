@@ -50,6 +50,7 @@ public class TicTacToe{
 					return "X";
 				}
 				else{
+					String sym = Character.toString(tictactoe.current.getSymbol());
 					tictactoe.makeMove(row, col);
 					return "X";
 					
