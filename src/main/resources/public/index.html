@@ -87,10 +87,11 @@
         var form = $('form');
         var x = this;
         x.disabled = true;
+        console.log("button click");
       $.ajax({
           type: form.attr('method'),
           url: form.attr('action'),
-          data: this.id
+          data: 'boardPos=' + this.id
           }).done(function(ret) 
           {
           	console.log(ret);

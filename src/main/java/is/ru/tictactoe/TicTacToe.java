@@ -22,19 +22,21 @@ public class TicTacToe{
        		public Object handle(Request request, Response response)
             {
 
-            	String pos = request.queryParams("id");
+            	String boardPos = request.queryParams("boardPos");
+            	Strin pos = boardPos.split("=")[1];
+
             	int row = Integer.valueOf(pos.split("_")[0]);
             	int col = Integer.valueOf(pos.split("_")[0]);
 
 				if(tictactoe.checkIfWinner()){
 					//tictactoe = new Game();
 					tictactoe.b.initializeBoard();
-					return 0;
+					return "X";
 				}
 				if(tictactoe.checkIfTie()){
 					//tictactoe = new Game();
 					tictactoe.b.initializeBoard();
-					return 0;
+					return "X";
 				}
 				else{
 					tictactoe.makeMove(row, col);
