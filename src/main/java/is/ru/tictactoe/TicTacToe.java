@@ -42,12 +42,12 @@ public class TicTacToe{
 				if(tictactoe.checkIfWinner()){
 					//tictactoe = new Game();
 					tictactoe.b.initializeBoard();
-					return "X";
+					return 0;
 				}
 				if(tictactoe.checkIfTie()){
 					//tictactoe = new Game();
 					tictactoe.b.initializeBoard();
-					return "X";
+					return 0;
 				}
 				else{
 					String sym = Character.toString(tictactoe.current.getSymbol());

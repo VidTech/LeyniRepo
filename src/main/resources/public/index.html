@@ -91,7 +91,7 @@
       $.ajax({
           type: form.attr('method'),
           url: form.attr('action'),
-          data: 'pos=' + this.id
+          data: 'pos=' + this.id	
           }).done(function(ret) 
           {
           	console.log(ret);
@@ -101,11 +101,11 @@
             if(ret === "O"){
               $(x).val('O');
             }
-            /*if(ret === "p1"){
+            if(ret === 0){
               $(x).val('1!');
               $('.btn').attr("disabled", "disabled");
             }
-            if(ret === "p2"){
+            /*if(ret === "p2"){
               $(x).val('2!');
               $('.btn').attr("disabled", "disabled");
             }
