@@ -29,14 +29,14 @@ public class TicTacToeTest {
 	public void testAddToBoard(){
 		Game test = new Game();
 		test.b.addToBoard(test.p1, 1, 1);
-		assertEquals('X', test.b.getSymbolAtPos(1,1));
+		assertEquals('X', test.b.getSymbolAtPos(1, 1));
 	}
 
 	@Test
 	//test if move is outside the board
-	public void testMakeMove(){
+	public void testcheckIfMoveOnBoard(){
 		Game test = new Game();
-		assertEquals("some error", test.makeMove(4,4));
+		assertEquals(false, test.checkIfMoveOnBoard(4, 4));
 	}
 
 	@Test

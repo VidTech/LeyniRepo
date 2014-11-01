@@ -8,10 +8,27 @@ public class Game{
 
 
 	public void makeMove(int row, int col){
-		if(this.b.addToBoard(current, row, col)){
+        if(checkIfMoveOnBoard(row, col) == true){
+            this.b.addToBoard(current, row, col);
             switchPlayers();
+            
+        }
+        else {
+            error();
         }
 	}
+
+    public boolean checkIfMoveOnBoard(int row, int col){
+        if((row >= 0 && row < 3) && (col >= 0 && col < 3)){
+            return true;
+        }
+        return false;
+    }
+
+    public String error(){
+        String string = "some error";
+        return string;
+    }
 
 	public boolean checkIfWinner(){
 		if((winningRow() == true || winningColumn() == true) || winningCross() == true){
