@@ -100,19 +100,26 @@
               $(x).val('O');
             }
             if(ret === "XWINS"){
-            	alert("X Wins!")
-              $(x).val('1!');
-              $('.btn').attr("disabled", "disabled");
+            	$(x).val('X');
+            	if(confirm("X Wins!")){
+              		window.location.reload();
+              }
+              //$('.btn').attr("disabled", "disabled");
             }
             if(ret === "OWINS"){
-            	alert("O Wins!")
-              $(x).val('2!');
-              $('.btn').attr("disabled", "disabled");
+            	$(x).val('O');
+            	if(confirm("X Wins!")){
+              		window.location.reload();
+              }
+              //$(x).val('O');
+              //$('.btn').attr("disabled", "disabled");
             }
             if (ret === "Tie"){
-            	alert("It's a Tie")
-              $(x).val('Tie');
-              $('.btn').attr("disabled", "disabled");
+            	if(confirm("It's a tie!")){
+              		window.location.reload();
+              }
+              //$(x).val('Tie');
+              //$('.btn').attr("disabled", "disabled");
             }
            /* if (ret === "Tie2"){
               $(x).val('Tie');

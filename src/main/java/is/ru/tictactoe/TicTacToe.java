@@ -43,11 +43,9 @@ public class TicTacToe{
 
 				if(tictactoe.checkIfWinner()){
 					String ret = sym + "WINS";
-					tictactoe.b.initializeBoard();
 					return ret;
 				}
 				if(tictactoe.checkIfTie()){
-					tictactoe.b.initializeBoard();
 					return "Tie";
 				}
 				else{
