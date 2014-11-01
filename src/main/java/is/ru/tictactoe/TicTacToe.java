@@ -23,7 +23,7 @@ public class TicTacToe{
             {
 
             	String boardPos = request.queryParams("boardPos");
-            	Strin pos = boardPos.split("=")[1];
+            	String pos = boardPos.split("=")[1];
 
             	int row = Integer.valueOf(pos.split("_")[0]);
             	int col = Integer.valueOf(pos.split("_")[0]);
