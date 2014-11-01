@@ -14,8 +14,6 @@ public class TicTacToe{
         setPort(Integer.valueOf(System.getenv("PORT")));
         final Game tictactoe = new Game();
 
-		//Scanner scanner = new Scanner(System.in);
-		//Game theGame = new Game();
          post(new Route("/add") 
         {
             @Override

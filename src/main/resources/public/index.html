@@ -104,27 +104,20 @@
             	if(confirm("X Wins!")){
               		window.location.reload();
               }
-              //$('.btn').attr("disabled", "disabled");
             }
             if(ret === "OWINS"){
             	$(x).val('O');
-            	if(confirm("X Wins!")){
+            	if(confirm("O Wins!")){
               		window.location.reload();
               }
-              //$(x).val('O');
-              //$('.btn').attr("disabled", "disabled");
+
             }
             if (ret === "Tie"){
             	if(confirm("It's a tie!")){
               		window.location.reload();
               }
-              //$(x).val('Tie');
-              //$('.btn').attr("disabled", "disabled");
             }
-           /* if (ret === "Tie2"){
-              $(x).val('Tie');
-              $('.btn').attr("disabled", "disabled");
-            }*/
+
           }).fail(function() {
               alert("Error");
           });
