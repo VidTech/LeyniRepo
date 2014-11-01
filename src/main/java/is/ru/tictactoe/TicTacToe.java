@@ -23,18 +23,22 @@ public class TicTacToe{
             {
 
             	String pos = request.queryParams("id");
-            	int row = Integer.valueOf(pos.split('_')[0]);
-            	int col = Integer.valueOf(pos.split('_')[0]);
+            	int row = Integer.valueOf(pos.split("_")[0]);
+            	int col = Integer.valueOf(pos.split("_")[0]);
 
-				if(theGame.checkIfWinner()){
-					theGame = new Game();
+				if(tictactoe.checkIfWinner()){
+					//tictactoe = new Game();
+					tictactoe.b.initializeBoard();
+					return 0;
 				}
-				if(theGame.checkIfTie()){
-					theGame = new Game();
+				if(tictactoe.checkIfTie()){
+					//tictactoe = new Game();
+					tictactoe.b.initializeBoard();
+					return 0;
 				}
 				else{
-					char sym = theGame.current.getSymbol();
-					theGame.makeMove(row, col);
+					char sym = tictactoe.current.getSymbol();
+					tictactoe.makeMove(row, col);
 					return sym;
 					
 				}
