@@ -15,7 +15,9 @@ public class Game{
 
 	public boolean checkIfWinner(){
 		if((winningRow() == true || winningColumn() == true) || winningCross() == true){
-			return true;
+			current = p1;
+            b.initializeBoard();
+            return true;
         }
         return false;
 	}
@@ -69,6 +71,8 @@ public class Game{
 				}
 			}
 		}
+        current = p1;
+        b.initializeBoard();
 		return true;
 	}
 

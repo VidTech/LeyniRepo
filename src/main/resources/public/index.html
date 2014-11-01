@@ -87,33 +87,34 @@
         var form = $('form');
         var x = this;
         x.disabled = true;
-        console.log("button click");
       $.ajax({
           type: form.attr('method'),
           url: form.attr('action'),
           data: 'pos=' + this.id	
           }).done(function(ret) 
           {
-          	console.log(ret);
             if(ret === "X"){
               $(x).val('X');
             }
             if(ret === "O"){
               $(x).val('O');
             }
-            if(ret === 0){
+            if(ret === "XWINS"){
+            	alert("X Wins!")
               $(x).val('1!');
               $('.btn').attr("disabled", "disabled");
             }
-            /*if(ret === "p2"){
+            if(ret === "OWINS"){
+            	alert("O Wins!")
               $(x).val('2!');
               $('.btn').attr("disabled", "disabled");
             }
-            if (ret === "Tie1"){
+            if (ret === "Tie"){
+            	alert("It's a Tie")
               $(x).val('Tie');
               $('.btn').attr("disabled", "disabled");
             }
-            if (ret === "Tie2"){
+           /* if (ret === "Tie2"){
               $(x).val('Tie');
               $('.btn').attr("disabled", "disabled");
             }*/

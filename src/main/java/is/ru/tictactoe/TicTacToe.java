@@ -39,20 +39,18 @@ public class TicTacToe{
             		col = pos - 6;
             	}
 
+            	String sym = Character.toString(tictactoe.current.getSymbol());
+
 				if(tictactoe.checkIfWinner()){
-					//tictactoe = new Game();
-					String sym = Character.toString(tictactoe.current.getSymbol());
 					String ret = sym + "WINS";
 					tictactoe.b.initializeBoard();
 					return ret;
 				}
 				if(tictactoe.checkIfTie()){
-					//tictactoe = new Game();
 					tictactoe.b.initializeBoard();
 					return "Tie";
 				}
 				else{
-					String sym = Character.toString(tictactoe.current.getSymbol());
 					tictactoe.makeMove(row, col);
 					return sym;
 					
