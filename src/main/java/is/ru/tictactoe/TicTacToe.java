@@ -42,7 +42,7 @@ public class TicTacToe{
 				if(tictactoe.checkIfWinner()){
 					//tictactoe = new Game();
 					String sym = Character.toString(tictactoe.current.getSymbol());
-					String ret = sym + "WINS"
+					String ret = sym + "WINS";
 					tictactoe.b.initializeBoard();
 					return ret;
 				}
