@@ -37,9 +37,8 @@ public class TicTacToe{
 					return 0;
 				}
 				else{
-					char sym = tictactoe.current.getSymbol();
 					tictactoe.makeMove(row, col);
-					return sym;
+					return 'X';
 					
 				}
 
