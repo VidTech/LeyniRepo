@@ -50,6 +50,13 @@ public class TicTacToe{
 				}
 				else{
 					tictactoe.makeMove(row, col);
+					if(tictactoe.checkIfWinner()){
+						String ret = sym + "WINS";
+						return ret;
+					}
+					if(tictactoe.checkIfTie()){
+						return "Tie";
+					}
 					return sym;
 					
 				}
