@@ -41,13 +41,15 @@ public class TicTacToe{
 
 				if(tictactoe.checkIfWinner()){
 					//tictactoe = new Game();
+					String sym = Character.toString(tictactoe.current.getSymbol());
+					String ret = sym + "WINS"
 					tictactoe.b.initializeBoard();
-					return 0;
+					return ret;
 				}
 				if(tictactoe.checkIfTie()){
 					//tictactoe = new Game();
 					tictactoe.b.initializeBoard();
-					return 0;
+					return "Tie";
 				}
 				else{
 					String sym = Character.toString(tictactoe.current.getSymbol());
