@@ -6,12 +6,10 @@ jdk:
 
 script:
     - ./gradlew check
+    - ./gradlew seleniumXvfb
 
 deploy:
     provider: heroku
-    api_key:
-        secure: a88195eb-a538-4bb0-bc55-184f5cac9ae2
-    app:
-        master: VidTech
-    on:
-        repo: LeyniRepo
+    api_key: a88195eb-a538-4bb0-bc55-184f5cac9ae2
+    strategy: git
+    app: LeyniRepo
