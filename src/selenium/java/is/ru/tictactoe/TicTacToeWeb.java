@@ -8,11 +8,15 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.After;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverBackedSelenium;
+import com.thoughtworks.selenium.Selenium;
+import java.util.concurrent.TimeUnit;
 
 
 public class TicTacToeWeb {
@@ -20,6 +24,7 @@ public class TicTacToeWeb {
     static WebDriver driver;
     static String baseUrl;
     static String port;
+    private Selenium selenium;
 
     // @BeforeClass
     // public static void before() {
@@ -42,9 +47,12 @@ public class TicTacToeWeb {
         // if(port == null) {
         //     port = "4567";
         // }
-        baseUrl = "http://sniglartest1.herokuapp.com/";
+        // baseUrl = "http://sniglartest1.herokuapp.com/";
+        String baseUrl = "http://sniglartest1.herokuapp.com/";
+        selenium = new WebDriverBackedSelenium(driver, baseUrl);
+
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        ;
+    
     }
 
     @Test
@@ -55,12 +63,39 @@ public class TicTacToeWeb {
     	// }
      //    driver.get("https://sniglartest1.herokuapp.com:" + port);
 
-        driver.get(baseUrl);
+        //driver.get(baseUrl);
 
-        assertEquals("TicTacToe", driver.getTitle());
+        assertEquals("TicTacToe", selenium.getTitle());
+    }
+
+
+    @Test
+    public void testAllgramtictactoeIT() throws Exception {
+
+        selenium.open("/");
+        selenium.click("id=0");
+        TimeUnit.SECONDS.sleep(1);
+        selenium.click("id=4");
+        TimeUnit.SECONDS.sleep(1);
+        selenium.click("id=1");
+        TimeUnit.SECONDS.sleep(1);
+        selenium.click("id=5");
+        TimeUnit.SECONDS.sleep(1);
+        selenium.click("id=2");
+        TimeUnit.SECONDS.sleep(1);
+        selenium.setSpeed("5000");
+        assertEquals("X", selenium.getValue("id=2"));
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+     public void tearDown() throws Exception {
+        selenium.stop();
     }
 }
 
+
+    
+   
 //     @Test
 //     public void assertSpecificJoke() {
 //         driver.get(baseUrl + "/specific.html");
