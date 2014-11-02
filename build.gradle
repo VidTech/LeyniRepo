@@ -46,7 +46,7 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
-mainClassName = "is.ru.tictactoe.TicTacToeWeb"
+mainClassName = "is.ru.tictactoe.TicTacToe"
 
 task selenium(type: Test, dependsOn: installApp) {
     testClassesDir = sourceSets.selenium.output.classesDir

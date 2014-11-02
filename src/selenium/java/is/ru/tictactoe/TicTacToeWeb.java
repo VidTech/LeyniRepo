@@ -21,17 +21,10 @@ public class TicTacToeWeb {
     static String baseUrl;
     static String port;
 
-    @BeforeClass
-    public static void before() {
-        // Will be run before all tests in class are run
-        driver = new FirefoxDriver();
-        port = System.getenv("PORT");
-        if(port == null) {
-            port = "4567";
-        }
-        baseUrl = "http://localhost:" + port;
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    }
+    // @BeforeClass
+    // public static void before() {
+       
+    // }
 
     @AfterClass
     public static void after() {
@@ -42,6 +35,15 @@ public class TicTacToeWeb {
     @Before
     public void setup() {
         // Will be run before each test in class is run
+
+         // Will be run before all tests in class are run
+        driver = new FirefoxDriver();
+        // port = System.getenv("PORT");
+        // if(port == null) {
+        //     port = "4567";
+        // }
+        baseUrl = "http://sniglartest1.herokuapp.com/";
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         ;
     }
 
@@ -53,7 +55,7 @@ public class TicTacToeWeb {
     	// }
      //    driver.get("https://sniglartest1.herokuapp.com:" + port);
 
-        driver.get(baseUrl + "/");
+        driver.get(baseUrl);
 
         assertEquals("TicTacToe", driver.getTitle());
     }
