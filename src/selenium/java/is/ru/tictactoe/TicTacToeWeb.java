@@ -8,14 +8,20 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.After;
 
+import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 import org.openqa.selenium.WebDriver;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriverBackedSelenium;
 
 
 public class TicTacToeWeb {
+
+    public Selenium selenium;
 
     static WebDriver driver;
     static String baseUrl;
@@ -44,7 +50,11 @@ public class TicTacToeWeb {
         // }
         baseUrl = "http://sniglartest1.herokuapp.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        ;
+
+        WebDriver driver2 = new FirefoxDriver();
+        String baseUrl2 = "http://sniglartest1.herokuapp.com/";
+        selenium = new WebDriverBackedSelenium(driver2, baseUrl2);
+
     }
 
     @Test
@@ -59,18 +69,24 @@ public class TicTacToeWeb {
 
         assertEquals("TicTacToe", driver.getTitle());
     }
-}
 
-//     @Test
-//     public void assertSpecificJoke() {
-//         driver.get(baseUrl + "/specific.html");
-//         driver.findElement(By.id("number")).clear();
-//         driver.findElement(By.id("number")).sendKeys("5");
-//         driver.findElement(By.cssSelector("button[type=\"submit\"]")).click();
-//         WebDriverWait wait = new WebDriverWait(driver, 10);
-//         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert")));
-//         String expectedJoke = "Chuck Norris lost his virginity before his dad did.";
-//         String foundJoke = driver.findElement(By.id("results")).getText();
-//         assertEquals(foundJoke, expectedJoke);
-//     }
-// }
+    @Test
+    public void testWhenOWins() throws Exception {
+        selenium.open("/");
+        selenium.click("id=4");
+        TimeUnit.SECONDS.sleep(1);
+        selenium.click("id=0");
+        TimeUnit.SECONDS.sleep(1); 
+        selenium.click("id=6");
+        TimeUnit.SECONDS.sleep(1);
+        selenium.click("id=1");
+        TimeUnit.SECONDS.sleep(1);
+        selenium.click("id=8");
+        TimeUnit.SECONDS.sleep(1);
+        selenium.click("id=2");
+        TimeUnit.SECONDS.sleep(1);
+        selenium.setSpeed("5000");
+        assertEquals("O", selenium.getValue("id=2"));
+        TimeUnit.SECONDS.sleep(1);
+    }
+}
