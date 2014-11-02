@@ -11,7 +11,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'pmd'
-
+apply plugin: 'jacoco'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -95,5 +95,19 @@ task stage { dependsOn installApp }
 test {
     testLogging {
         exceptionFormat = 'full'
+    }
+}
+
+jacoco {
+    toolVersion = "0.7.1.201405082137"	    
+    reportsDir = file("$buildDir/JacocoReportDir")
+}
+
+jacocoTestReport {
+    dependsOn check, seleniumXvfb
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
     }
 }
