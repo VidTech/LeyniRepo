@@ -14,7 +14,7 @@ public class Game{
 	}
 
 	public boolean checkIfWinner(){
-		if((winningRow() == true || winningColumn() == true) || winningCross() == true){
+		if(winningRow() == true || winningColumn() == true || winningCross() == true){
 			current = p1;
             b.initializeBoard();
             return true;
