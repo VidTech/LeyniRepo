@@ -12,4 +12,4 @@ deploy:
     provider: heroku
     api_key: a88195eb-a538-4bb0-bc55-184f5cac9ae2
     strategy: git
-    app: LeyniRepo
+    app: sniglartest1
