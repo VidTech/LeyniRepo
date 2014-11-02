@@ -11,7 +11,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = "is.ru.tictactoe.TicTacToe"
+
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -20,11 +20,24 @@ repositories {
     jcenter()
 }
 
-// In this section you declare the dependencies for your production and test code
+sourceSets {
+    selenium
+    seleniumXvfb
+}
+
+
 dependencies {
     // The production code uses the SLF4J logging API at compile time
     compile 'org.slf4j:slf4j-api:1.7.5'
     compile 'com.sparkjava:spark-core:1.1.1'
+
+
+    seleniumCompile 'junit:junit:4.11'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.39.0'
+    // seleniumCompile 'org.seleniumhq.selenium:selenium-server-standalone:2.41.0'
+
+    seleniumXvfbCompile 'junit:junit:4.11'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.39.0'
 
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the
@@ -33,9 +46,54 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
+mainClassName = "is.ru.tictactoe.TicTacToeWeb"
+
+task selenium(type: Test, dependsOn: installApp) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+
+    ant.condition(property: "os", value: "windows") { os(family: "windows") }
+    ant.condition(property: "os", value: "unix"   ) { os(family: "unix")    }
+
+    doFirst {
+        switch(ant.properties.os) {
+            case 'unix':
+                'build/install/LeyniRepo/bin/LeyniRepo &'.execute()
+                break
+            case 'windows':
+                'build\\install\\LeyniRepo\\bin\\LeyniRepo.bat'.execute()
+                break
+        }
+    }
+}
+
+task seleniumXvfb(type: Test, dependsOn: installApp) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+
+    environment "DISPLAY", ":99"
+
+    doFirst {
+        'bin/xvfb start'.execute()
+        'build/install/LeyniRepo/bin/LeyniRepo &'.execute()
+    }
+    
+    doLast {
+        'bin/xvfb stop'.execute()
+    }
+}
+
+
 jar {
 	manifest {
 		attributes("Main-Class": "is.ru.tictactoe.TicTacToe")
 	}
 }
+
 task stage { dependsOn installApp }
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
