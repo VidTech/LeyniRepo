@@ -1,0 +1,8 @@
+#!/bin/bash
+
+./gradlew clean
+kill firefox
+./gradlew build
+./gradlew check
+./gradlew seleniumXvfb
+cat /home/eythort09/LeyniRepo/build/test-results/TEST-is.ru.tictactoe.TicTacToeWeb.xml
