@@ -91,13 +91,13 @@ public class TicTacToeWeb {
     // }
 
 
-      @Test
-    public void testWhenOWins() throws Exception {
-        selenium.open("/");
-        selenium.click("id=4");
-        TimeUnit.SECONDS.sleep(1);
-        selenium.setSpeed("5000");
-        assertEquals("O", selenium.getValue("id=4"));
+    //   @Test
+    // public void testWhenOWins() throws Exception {
+    //     selenium.open("/");
+    //     selenium.click("id=4");
+    //     TimeUnit.SECONDS.sleep(1);
+    //     selenium.setSpeed("5000");
+    //     assertEquals("O", selenium.getValue("id=4"));
 
-    }
+    // }
 }
