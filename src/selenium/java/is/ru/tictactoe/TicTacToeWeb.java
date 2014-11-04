@@ -51,9 +51,9 @@ public class TicTacToeWeb {
         baseUrl = "http://sniglartest1.herokuapp.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-        //WebDriver driver2 = new FirefoxDriver();
-        //String baseUrl2 = "http://sniglartest1.herokuapp.com/";
-        selenium = new WebDriverBackedSelenium(driver, baseUrl);
+        WebDriver driver2 = new FirefoxDriver();
+        String baseUrl2 = "http://sniglartest1.herokuapp.com/";
+        selenium = new WebDriverBackedSelenium(driver2, baseUrl2);
 
     }
 
@@ -93,12 +93,11 @@ public class TicTacToeWeb {
 
       @Test
     public void testWhenOWins() throws Exception {
-        driver.get(baseUrl);
         selenium.open("/");
         selenium.click("id=4");
         TimeUnit.SECONDS.sleep(1);
         selenium.setSpeed("5000");
-        assertEquals("X", selenium.getValue("id=4"));
+        assertEquals("O", selenium.getValue("id=4"));
 
     }
 }
