@@ -98,16 +98,4 @@ test {
     }
 }
 
-jacoco {
-    toolVersion = "0.7.1.201405082137"	    
-    reportsDir = file("$buildDir/JacocoReportDir")
-}
 
-jacocoTestReport {
-    dependsOn check, seleniumXvfb
-    reports {
-        xml.enabled true
-        csv.enabled false
-        html.destination "${buildDir}/jacocoHtml"
-    }
-}
