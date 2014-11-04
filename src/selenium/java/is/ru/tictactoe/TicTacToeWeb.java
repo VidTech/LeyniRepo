@@ -67,8 +67,18 @@ public class TicTacToeWeb {
 
         driver.get(baseUrl);
 
-        assertEquals("TicTacToe", driver.getTitle());
+        assertEquals("TicaTacaToe", driver.getTitle());
     }
+
+
+
+
+
+
+
+
+
+
 
     // @Test
     // public void testWhenOWins() throws Exception {
