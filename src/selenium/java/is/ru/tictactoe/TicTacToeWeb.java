@@ -86,7 +86,7 @@ public class TicTacToeWeb {
         selenium.click("id=2");
         TimeUnit.SECONDS.sleep(1);
         selenium.setSpeed("5000");
-        assertEquals("O", selenium.getValue("id=2"));
+        assertEquals(" ", selenium.getValue("id=2"));
         TimeUnit.SECONDS.sleep(1);
     }
 }
